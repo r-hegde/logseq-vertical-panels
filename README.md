@@ -1,0 +1,1 @@
+# logseq-vertical-panels
