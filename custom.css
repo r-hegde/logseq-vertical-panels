@@ -1,0 +1,824 @@
+@import "https://codemirror.net/theme/blackboard.css";
+@import url("https://cdn.jsdelivr.net/gh/pengx17/logseq-dev-theme@main/bullet_threading.css");
+
+:root {
+  --ls-block-bullet-active-color: #a3cef1;
+  --ls-block-bullet-threading-width: 1.5px;
+}
+
+/* Rearrange default journal page */
+.journal.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.journal > .references {
+  order: 2;
+}
+
+#today-queries {
+  order: 1;
+}
+
+/*---------------------Margins-----------------------*/
+
+/* This reduces the margin space of the main content page */
+.cp__sidebar-main-content {
+  width: 100% !important;
+}
+
+#main-content-container .file {
+  margin: 0 auto !important;
+}
+
+/* Increase width of the main content page*/
+:root {
+  --ls-main-content-max-width: 96% !important;
+  --ls-main-content-max-width-wide: 99% !important;
+}
+
+/*-------------------- Topbar------------------- */
+
+@supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
+  .cp__header,
+  .cp__right-sidebar-topbar {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background-color: transparent;
+  }
+}
+
+@supports not (
+  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
+) {
+  .cp__header,
+  .cp__right-sidebar-topbar,
+  .sidebar-item.content > div > div:first-of-type {
+    background: var(--ct-header-bg-color);
+  }
+}
+
+/*-------------------- Right side bar------------------- */
+
+@supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
+  .sidebar-item.content > div > div:first-of-type {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background-color: var(--ls-primary-background-color);
+  }
+}
+
+.cp__right-sidebar-inner {
+  --ct-sidebar-padding: 0.05rem !important; /* changed from 0.5rem */
+}
+
+.sidebar-item-list {
+  padding-left: 0.5rem !important; /* changed from 1rem */
+  padding-right: 0.05rem !important; /* changed from 1rem */
+}
+
+/* Right sidebar title */
+.sidebar-item .ml-1:not(.text-sm) {
+  font-size: 0.9em !important; /* changed from 1.2rem */
+  margin-left: 0.25px !important; /* changed from 4px */
+}
+
+.sidebar-item.content > div > div:first-of-type {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  z-index: 10;
+  margin: -1rem;
+}
+
+.sidebar-item.content > div > div:first-of-type + div {
+  margin-top: 2rem !important; /* changed from 1.5rem */
+}
+
+/*-----------------vertical style of sidebar------------------------*/
+
+.sidebar-item.content.color-level.px-4 {
+  min-width: 33vw;
+  overflow-y: scroll;
+  margin-top: -24px;
+}
+
+.sidebar-item-list.flex-1.scrollbar-spacing {
+  display: flex;
+  padding-bottom: 0;
+}
+
+div#right-sidebar {
+  width: 50%;
+}
+
+div#right-sidebar,
+.cp__right-sidebar-scrollable {
+  height: calc(100vh - 8px);
+}
+
+/*----------- Trying  Andy mode -----------------
+.sidebar-item.content > div > div:first-of-type  {
+  writing-mode: vertical-lr;            
+  text-orientation: sideways;
+  border-top: none;  
+  border-bottom: none;  
+  width: var(--header-width);  
+  height: auto;  
+  position: absolute;
+  left:0;  
+  top:45px;  
+  bottom:0;
+}
+
+.sidebar-item .ml-1:not(.text-sm) {
+  height: unset;
+  padding-left: unset;
+  padding-top: 0;
+}
+
+
+.sidebar-item .ml-1:after {
+  width: 100%;
+  height: 15px;
+  top: unset;
+  bottom: 0;
+}
+
+/*---------------Fonts & Colors----------------------*/
+:root {
+  --ct-background: var(--ls-primary-background-color);
+  --ct-page-font-color: var(--ls-primary-text-color);
+  --ct-page-title-color: var(--ct-bold-color);
+  --ct-page-title-font-size: 36px;
+  --ct-page-title-line-height: 40px;
+  --ct-page-title-font-weight: 300;
+  --ct-page-title-font-style: normal;
+  --ct-heading-font-family: var(--ct-page-title-font-family);
+  --ct-heading-font-size: 25px;
+  --ct-heading-font-weight: 700;
+  --ct-heading-font-style: normal;
+  --ct-header-height: 42px;
+  --ct-topbar-backdrop: blur(20px);
+  --ct-query-header-color: var(--ls-primary-background-color);
+  --ct-query-header-background: var(--ct-primary-color);
+}
+
+/*-------------- Heading & Page title---------------- */
+h1.title {
+  margin-top: 8px;
+  font-family: var(--ct-page-title-font-family);
+  font-size: var(--ct-page-title-font-size);
+  font-weight: var(--ct-page-title-font-weight);
+  font-style: var(--ct-page-title-font-style);
+  color: var(--ct-page-title-color);
+  line-height: var(--ct-page-title-line-height);
+  text-shadow: var(--ct-page-title-text-shadow, none);
+}
+
+a.title h1.title {
+  margin-top: 0;
+  text-shadow: var(--ct-page-title-text-shadow, none);
+}
+
+.ls-block h2 {
+  font-family: var(--ct-heading-font-family);
+  font-weight: var(--ct-heading-font-weight);
+  font-style: var(--ct-heading-font-style);
+  color: var(--ct-heading-color);
+  text-shadow: var(--ct-heading-text-shadow, none);
+}
+
+.ls-block :is(h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5) {
+  font-family: var(--ct-page-title-font-family);
+}
+
+.ls-block :is(h1, h2, .h1, .h2) {
+  font-weight: var(--ct-page-title-font-weight);
+}
+
+.ls-block :is(h3, h4) {
+  margin: 0.3em 0 0;
+}
+
+.ls-block :is(h3, h4, .h3, .h4) {
+  font-weight: 400;
+}
+
+.ls-block :is(h4, .h4) {
+  opacity: 0.8;
+}
+
+.ls-block :is(h5, .h5):not(textarea) {
+  transform: translateY(-8px);
+}
+
+.ls-block .block-ref :is(h1, h2, h3, h4, h5) {
+  font-size: 1em;
+}
+
+.ls-block :is(h1, h2, h3, h4, h5)::after {
+  margin-left: 0.5rem;
+  font-family: var(--ct-code-font-family);
+  font-size: 0.6rem;
+  font-style: var(--ct-inline-code-font-style) !important;
+  border-radius: var(--ct-inline-code-border-radius);
+  padding: var(--ct-inline-code-padding) !important;
+  background: var(--ls-tertiary-background-color);
+  color: var(--ct-inline-code-color);
+  vertical-align: middle;
+  opacity: 0.3;
+}
+
+.ls-block :is(h1, h2, h3, h4, h5):hover::after {
+  opacity: 1;
+}
+
+.cp__header,
+.cp__right-sidebar-topbar {
+  height: var(--ct-header-height);
+}
+
+.cp__header::after,
+.cp__right-sidebar-topbar::after {
+  left: 0;
+  right: 0;
+  height: 1px;
+  z-index: 1;
+  position: absolute;
+  top: 100%;
+  background-color: rgba(0, 0, 0, 0.16);
+  display: block;
+  content: "";
+}
+
+/* --------------Hide unused navigation items-------------- */
+
+.cp__right-sidebar-settings .ml-4.text-sm:last-child {
+  display: none;
+}
+
+.origin-top-right .menu-link:nth-child(6) {
+  display: none;
+}
+
+.origin-top-right hr {
+  display: none;
+}
+
+.flashcards-nav {
+  display: none;
+}
+
+.nav-content-item.recent.is-expand {
+  display: none;
+}
+
+/*------------------Move toolbar icons-------------------*/
+
+/* shrink left toolbar */
+/* note that underscore after cp should be typed twice __ and not just _ */
+.cp__header > .l {
+  width: auto;
+}
+
+/*move all icons to the left*/
+.cp__header > .r {
+  justify-content: flex-start;
+}
+
+/* add gaps before plugins + re-order */
+.ui-items-container[data-type="toolbar"] {
+  margin-left: auto;
+  order: 1;
+}
+body:not([data-page="home"]) .r > div:nth-child(2) {
+  order: 2;
+}
+.ui__dropdown-trigger {
+  order: 3;
+}
+.r > div:last-child {
+  display: flex !important;
+  order: 4;
+}
+
+/* -----------Margins for logtools kanban tables------------ */
+
+[data-refs-self*="kanban"]
+  > .block-children-container.flex
+  > .block-children
+  > .ls-block {
+  margin-left: -24px;
+}
+
+[data-refs-self*="kanban"]
+  > .block-children-container.flex
+  > .block-children.w-full
+  > .ls-block
+  > .flex.flex-row {
+  padding: 4px 0px;
+}
+
+/* hide set properties line */
+div[data-refs-self*="kanban"] .initial > div > .flex {
+  display: none;
+}
+
+/*------------------------Tags----------------------------*/
+
+/* Changes to appearance of tags */
+a.tag {
+  /* color: rgb(181, 255, 210);*/
+  font-weight: 500;
+  border: 1px solid currentColor;
+  padding: 0 4px;
+  border-radius: 4px;
+  line-height: 1.4;
+  font-size: 0.8em;
+}
+
+a.tag:hover {
+  background-color: var(--ct-block-reference-background-hover);
+}
+
+/* Custom appearance for project tags*/
+a.tag[data-ref*="p_"] {
+  color: rgb(40, 40, 40);
+  background-color: rgb(181, 255, 210);
+  border-radius: 0.5rem 0rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 0.75rem;
+  padding: 0.2rem 0.3rem;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+a.tag[data-ref*="to-"] {
+  font-size: 0;
+  border: 0px !important;
+  padding: 0;
+}
+
+a.tag[data-ref*="to-"]:before {
+  content: "📓";
+  font-size: 0.5rem;
+  line-height: 0.5rem;
+}
+
+/*-------------------Miscellaneous----------------------*/
+
+/* Block with-bg-color */
+.with-bg-color {
+  border-radius: 4px;
+}
+
+/* Makes texts in bg always readable */
+.with-bg-color * {
+  color: white !important;
+  border-color: white !important;
+}
+
+/* Page properties */
+.page-properties,
+.block-properties {
+  margin: 0 0 0.6em -8px;
+  font-size: 0.8em;
+  background: var(--ls-secondary-background-color);
+  width: fit-content;
+  padding-right: 2rem;
+  max-width: var(--ct-block-max-width);
+}
+
+.sidebar-item-list .page-properties,
+.sidebar-item-list .block-properties {
+  background: var(--ls-tertiary-background-color);
+}
+
+/* Progress bar */
+progress {
+  vertical-align: middle;
+  border-radius: 8px;
+  height: 0.6em;
+  width: 100px;
+  border: 1px solid #000;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background: var(--ls-tertiary-background-color);
+}
+
+progress::-webkit-progress-value {
+  background: var(--ct-success-color);
+}
+
+/* Change the color of external links*/
+.external-link {
+  color: #a3e6bd; /* #ff9538;*/
+}
+
+/* Remove/reduce empty line gap for in-line code block */
+.extensions__code > div.flex {
+  margin-top: 2px !important;
+}
+
+.extensions__code {
+  display: flex;
+}
+
+/* Adjust youtube embed height */
+iframe[id^="youtube-player"] {
+  height: 600px !important;
+  width: var(--ls-main-content-max-width-wide) !important;
+}
+
+/*----------------------Priorities------------------------*/
+
+/* Remove the display of A, B, C priorities */
+a[priority="A"]::before,
+a.priority[href="#/page/A" i]:before {
+  display: none;
+}
+
+a[priority="B"]::before,
+a.priority[href="#/page/B" i]:before {
+  display: none;
+}
+
+a[priority="C"]::before,
+a.priority[href="#/page/C" i]:before {
+  display: none;
+}
+
+/*----------------------Queries---------------------------*/
+
+/* Reduce query padding*/
+.custom-query > div:first-child {
+  border-radius: 4px;
+  padding: 0.15rem 0.15rem;
+  box-shadow: 0 0 0 2px var(--color-level-2);
+  background-color: var(--color-level-1);
+  position: relative;
+}
+
+div.custom-query {
+  margin-top: 8px;
+}
+
+.embed .custom-query > div:first-child {
+  background: var(--ls-tertiary-background-color);
+}
+
+/* Hide "table view" from queries 
+div.custom-query div.align-items,
+div.custom-query div.my-2 {
+  display: none;
+}*/
+
+/* Remove the actual query displayed in simple query tables */
+div.dsl-query > div.custom-query > div.flex > div.content {
+  display: none;
+}
+
+.dsl-query .custom-query-title > .font-medium,
+:not(.dsl-query) > .custom-query .custom-query-title {
+  display: inline-block;
+  opacity: 1;
+  padding: 2px 10px !important;
+  background: var(--ct-query-header-background);
+  color: var(--ct-query-header-color);
+  font-family: var(--ct-code-font-family);
+  font-size: var(--ct-inline-code-font-size);
+  font-style: var(--ct-inline-code-font-style) !important;
+  border-radius: var(--ct-inline-code-border-radius);
+}
+
+:not(.dsl-query) > .custom-query .custom-query-title > .flex-row {
+  position: absolute;
+  left: 24px;
+  text-shadow: none;
+  font-family: inherit;
+  color: var(--ls-primary-text-color);
+  font-size: 0.8rem;
+}
+
+.dsl-query > .custom-query .foldable-title .opacity-70 code {
+  background: none;
+  color: var(--ct-query-header-color);
+}
+
+.block-body > .custom-query .foldable-title .opacity-70 > * {
+  color: var(--ct-query-header-color);
+}
+
+/*------------------------TODOs------------------------*/
+
+:root {
+  --ct-marker-border-radius: 4px;
+  --ct-task-done-text-decoration: none;
+  --ct-marker-size: 16px;
+  --ct-checkbox-color: var(--ls-active-primary-color);
+}
+
+/* Markers */
+.form-checkbox,
+.form-checkbox:focus {
+  border-radius: var(--ct-marker-border-radius);
+  border: 2px solid var(--ct-checkbox-color) !important;
+  background-color: transparent !important;
+  height: var(--ct-marker-size);
+  width: var(--ct-marker-size);
+}
+
+:is(.doing, .now) .form-checkbox,
+:is(.doing, .now) .form-checkbox:focus {
+  background-color: var(--ct-block-reference-background-hover) !important;
+}
+
+.waiting .form-checkbox,
+.waiting .form-checkbox:focus {
+  background-color: var(--ct-highlight-color) !important;
+}
+
+.form-checkbox:checked,
+.form-checkbox:checked:focus {
+  background-color: var(--ct-success-color) !important;
+  margin-right: 5px !important;
+}
+
+.done {
+  color: var(--ct-task-done-text-color);
+  text-decoration: var(--ct-task-done-text-decoration);
+}
+
+.block-marker.TODO {
+  font-weight: 400;
+}
+
+/*
+.block-marker.NOW, .block-marker.DOING {
+  color: #27ae9e;
+  font-weight: 400;
+}
+
+.block-marker.LATER {
+  color: #e88438;
+  font-weight: 400;
+}
+
+.block-marker.waiting {
+  color: #f6c423;
+  font-weight: 400;
+}
+
+/* Schedule and Deadline */
+.timestamp {
+  font-family: consolas;
+}
+.timestamp-label {
+  font-size: 0.75rem;
+}
+
+/*------Adding more highlight and font colors---------*/
+
+/* highlight */
+mark {
+  background: #ffe485;
+  color: rgb(40, 40, 40) !important;
+  text-decoration: none !important;
+}
+
+/* adding purple highlight */
+span[data-ref="#purple"] {
+  display: none;
+}
+
+span[data-ref="#purple"] + mark {
+  background: #bea8ff;
+}
+
+/* changing default the blue font color */
+span[data-ref="$blue"] + mark {
+  color: #3da5ff !important;
+}
+
+/*-----------------------------------------------------*/
+
+/* Change the look of embeds*/
+.embed,
+.embed-page,
+.embed-block {
+  box-shadow: 0.5px 0.5px black;
+  padding: 0.005em 0.005em;
+  padding-left: 0.005em;
+  border: 0.2px solid #000;
+  border-radius: 0.5px;
+  margin: 0.02em 0 0.05em;
+  margin-left: -35px;
+  transition: all ease-in 0.3s;
+}
+
+:is(.embed, .embed-page, .embed-block):is(:hover, :focus-within) {
+  box-shadow: 1px 1px black;
+  transform: translate(-7px, -6px);
+}
+
+/*-------------------------------------------------------*/
+
+/* Formatting to make cool pinned notes */
+
+.pinned {
+  margin-top: 10px;
+  position: relative;
+}
+
+.pinned svg {
+  display: none;
+}
+
+.pinned {
+  margin-top: 10px;
+  position: relative;
+}
+.pinned > :last-child {
+  color: #333;
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0 12px 10px -7px rgb(0 0 0 / 20%);
+  background: #89f2fa;
+  transform: rotate(2deg);
+}
+.pinned > :first-child {
+  background-color: #aaa;
+  display: block;
+  height: 32px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  top: -16px;
+  z-index: 1;
+  padding: 0;
+}
+.pinned > :first-child:after {
+  background-color: #a31;
+  background-image: radial-gradient(
+    25% 25%,
+    circle,
+    hsla(0, 0%, 100%, 0.3),
+    hsla(0, 0%, 0%, 0.3)
+  );
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.1),
+    inset 3px 3px 3px hsla(0, 0%, 100%, 0.2),
+    inset -3px -3px 3px hsla(0, 0%, 0%, 0.2),
+    23px 20px 3px hsla(0, 0%, 0%, 0.15);
+  content: "";
+  height: 12px;
+  left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 12px;
+}
+.pinned > :first-child:before {
+  background-color: hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 0 0.25em hsla(0, 0%, 0%, 0.1);
+  content: "";
+  height: 24px;
+  width: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(57.5deg);
+  transform-origin: 50% 100%;
+}
+
+/* -----------------logseq query table resizer v20220314b ----------------- */
+
+.table th {
+  position: relative;
+}
+.query-table-resizer {
+  /* Displayed at the right side of column */
+  position: relative;
+  top: -20px;
+  right: 0;
+  margin-bottom: -18px;
+  cursor: col-resize;
+  user-select: none;
+  border-right: 1px solid var(--ls-border-color);
+}
+
+.query-table-resizer:active,
+.query-table-resizing {
+  border-right: 2px solid rgb(255, 0, 0);
+}
+
+.dsl-query table.table-auto {
+  width: -webkit-fill-available;
+  table-layout: fixed;
+}
+
+.dsl-query .table-auto > thead > tr > th {
+  border-bottom: 1px solid var(--ls-border-color);
+}
+
+.dsl-query .table-auto > thead > tr > th {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 3px 6px;
+}
+
+.dsl-query .table-auto > tbody > tr > td.whitespace-nowrap {
+  overflow-wrap: break-word;
+  min-width: 20px;
+  white-space: normal;
+}
+
+.dsl-query .table-auto > tbody > tr > .whitespace-nowrap img {
+  max-height: 120px;
+  margin: 0;
+}
+/* -----------------------end of table resizer----------------------------- */
+
+.dark-theme,
+html[data-theme="dark"] {
+  --ct-primary-color: #a3cef1;
+  --ct-secondary-color: #6096ba;
+  --ct-warning-color: #ff7262;
+  --ct-success-color: #0dcf82;
+  --ct-highlight-color: #ffc600;
+  --color-level-1: #313942;
+  --color-level-2: #38434c;
+  --color-level-3: #404b55;
+  --color-level-4: #525f6b;
+  --color-level-5: #606e7a;
+  --color-level-6: #697885;
+  --ls-primary-background-color: #272c35;
+  --ls-secondary-background-color: var(--color-level-1);
+  --ls-tertiary-background-color: var(--color-level-2);
+  --ls-quaternary-background-color: var(--color-level-3);
+  --ls-border-color: var(--ls-tertiary-background-color);
+  --ls-table-tr-even-background-color: var(--ls-secondary-background-color);
+  --ls-primary-text-color: rgb(235, 235, 235);
+  --ls-secondary-text-color: rgb(200, 200, 200);
+  --ct-bold-color: #fff;
+  --ls-link-text-color: var(--ct-primary-color);
+  --ls-link-ref-text-color: var(--ct-primary-color);
+  --ls-link-ref-text-hover-color: var(--ct-secondary-color);
+  --ls-active-primary-color: var(--ct-primary-color);
+  --ls-active-secondary-color: var(--ct-secondary-color);
+  --ls-external-link-color: var(--ct-secondary-color);
+  --ls-guideline-color: var(--ls-tertiary-background-color);
+  --ls-block-bullet-color: var(--ls-tertiary-background-color);
+  --ls-bullet-closed-color: var(--ls-secondary-text-color);
+  --ls-block-bullet-border-color: var(--ls-quaternary-background-color);
+  --ct-block-arrow-color: rgb(165, 165, 165);
+  --ct-page-reference-color: var(--ls-active-primary-color);
+  --ls-icon-color: var(--ls-primary-text-color);
+  --ct-block-reference-background: rgba(16, 107, 163, 0.2);
+  --ct-block-reference-background-hover: rgba(16, 107, 163, 0.3);
+  --ls-page-properties-background-color: var(--ls-tertiary-background-color);
+  --ls-scrollbar-foreground-color: #5e5e5e;
+  /* Will be used if backdrop-filter not supported */
+  --ct-header-bg-color: #272c35ee;
+  --ls-selection-color: #000;
+  --ls-block-highlight-color: #32445a;
+}
+
+.dark-theme .image-resize {
+  filter: brightness(0.8) saturate(85%);
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  #main-content-container {
+    padding: 0;
+  }
+
+  .cp__sidebar-main-content > div {
+    padding: 1px 1em 1em 1em !important;
+    border: none;
+  }
+
+  a.title h1.title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  .custom-query {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ls-block[haschild="true"] > div > .block-content-wrapper::before {
+    left: -18px;
+  }
+}
