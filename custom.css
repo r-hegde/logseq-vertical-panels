@@ -367,7 +367,7 @@ a.tag[data-ref*=".v-"] {
   a.tag {
   display: none;
 }
-/*-----------end of vismode icon component-------------------*/
+/*---------------end of vismode icon component-------------------*/
 
 /* ----------------Kanban columns view by cannibalox------------- */
 
@@ -877,20 +877,21 @@ span[data-ref="$blue"] + mark {
   transform-origin: 50% 100%;
 }
 
-/* -----------------query table resizer by cannibalox [v20220314b] ----------------- */
+/* -----------------query table resizer by cannibalox [v20220331] ----------------- */
 
 .table th {
   position: relative;
 }
 .query-table-resizer {
-  /* Displayed at the right side of column */
   position: relative;
   top: -20px;
-  right: 0;
+  float: right;
   margin-bottom: -18px;
   cursor: col-resize;
   user-select: none;
   border-right: 1px solid var(--ls-border-color);
+  width: 10px; /* hitbox width */
+  height: 20px;
 }
 
 .query-table-resizer:active,
@@ -898,30 +899,29 @@ span[data-ref="$blue"] + mark {
   border-right: 2px solid rgb(255, 0, 0);
 }
 
-.dsl-query table.table-auto {
+.custom-query table.table-auto {
   width: -webkit-fill-available;
   table-layout: fixed;
 }
-
-.dsl-query .table-auto > thead > tr > th {
+.custom-query .table-auto > thead > tr > th {
   border-bottom: 1px solid var(--ls-border-color);
 }
-
-.dsl-query .table-auto > thead > tr > th {
+.custom-query .table-auto > thead > tr > th {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 3px 6px;
 }
-
-.dsl-query .table-auto > tbody > tr > td.whitespace-nowrap {
+.custom-query .table-auto > tbody > tr > td.whitespace-nowrap {
   overflow-wrap: break-word;
   min-width: 20px;
   white-space: normal;
+  font-weight: 300;
+  font-size: 13px;
 }
-
-.dsl-query .table-auto > tbody > tr > .whitespace-nowrap img {
+.custom-query .table-auto > tbody > tr > .whitespace-nowrap img {
   max-height: 120px;
   margin: 0;
 }
+
 /* -----------------------end of table resizer----------------------------- */
 
 /* ----------------------------------------------------------------
