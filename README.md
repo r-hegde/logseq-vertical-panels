@@ -1,3 +1,12 @@
 # logseq-vertical-panels
 
-<script src="https://gist.github.com/r-hegde/a904d86ed8d39f64629f09c0f9fd12a7.js"></script>
+A (very) basic css to have vertical panels in Logseq right sidebar.
+
+![logseq-vert](https://user-images.githubusercontent.com/99054998/161457229-47df7749-301b-45ef-83e9-264ec1cf73e5.gif)
+
+There's lot of room for improvements (aka caveats in the current system). For example, 
+
+* when you minimize the panels, they close vertically and not horizontally
+* the entire right sidebar can be resized but not individual panels
+
+(TODO: Add credits to people in the css and readme)
