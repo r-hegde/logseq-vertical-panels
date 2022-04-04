@@ -17,7 +17,7 @@ Copy the code in [vertical-panels.css](https://github.com/r-hegde/logseq-vertica
 
 ### Entire Theme
 
-The [custom.css](https://github.com/r-hegde/logseq-vertical-panels/blob/main/custom.css) has the whole theme, including the vertical panels for sidebar. The theme is largely inspired by logseq-dev-theme. 
+The [custom.css](https://github.com/r-hegde/logseq-vertical-panels/blob/main/custom.css) has the whole theme, including the vertical panels for sidebar. The theme is largely inspired by logseq-dev-theme. I have customized the theme as per my personal preferences, so if you're using this please proceed with caution. 
 
 ## Credits
 
