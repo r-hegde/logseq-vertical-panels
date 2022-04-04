@@ -1,0 +1,68 @@
+/*--------------------------- Right side bar-----------------------*/
+
+@supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
+  .sidebar-item.content > div > div:first-of-type {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background-color: var(--ls-primary-background-color);
+  }
+}
+
+/* Increase the max allowable width of right sidebar*/
+.cp__right-sidebar.open {
+  max-width: 90vw;
+}
+
+.cp__right-sidebar-inner {
+  --ct-sidebar-padding: 0.05rem !important; /* alternate value 0.5rem */
+}
+
+.cp__right-sidebar-inner .resizer {
+  background: none;
+  transition: 0.3s;
+}
+
+.sidebar-item-list {
+  padding-left: 0.5rem !important; /* alternate value 1rem */
+  padding-right: 0.05rem !important; /* alternate value 1rem */
+}
+
+/* Right sidebar title */
+.sidebar-item .ml-1:not(.text-sm) {
+  font-size: 0.9em !important; /* alternate value 1.2rem */
+  margin-left: 0.25px !important; /* alternate value 4px */
+}
+
+.sidebar-item.content > div > div:first-of-type {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  z-index: 10;
+  margin: -1rem;
+}
+
+.sidebar-item.content > div > div:first-of-type + div {
+  margin-top: 2rem !important; /* changed from 1.5rem */
+}
+
+/*-----------------vertical style of sidebar------------------------*/
+
+.sidebar-item.content.color-level.px-4 {
+  min-width: 33vw;
+  overflow-y: scroll;
+  margin-top: -24px; /* this value may depend on your current theme*/
+}
+
+.sidebar-item-list.flex-1.scrollbar-spacing {
+  display: flex;
+  padding-bottom: 0;
+}
+
+div#right-sidebar {
+  width: 50%;
+}
+
+div#right-sidebar,
+.cp__right-sidebar-scrollable {
+  height: calc(100vh - 8px);
+}
