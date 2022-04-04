@@ -9,4 +9,15 @@ There's lot of room for improvements (aka caveats in the current system). For ex
 * when you minimize the panels, they close vertically and not horizontally
 * the entire right sidebar can be resized but not individual panels
 
-(TODO: Add credits to people in the css and readme)
+## Credits
+
+For vertical-panels.css:
+
+* JimmyLv/digital-garden
+* deathau/sliding-panes-obsidian
+
+For custom.css:
+
+* pengx17/logseq-dev-theme
+* cannibalox/logtools
+* cannibalox/logseq-custom-files
