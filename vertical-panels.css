@@ -1,4 +1,4 @@
-/*--------------------------- Right side bar-----------------------*/
+/*--------------------------- Right sidebar--------------------------*/
 
 @supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
   .sidebar-item.content > div > div:first-of-type {
@@ -8,6 +8,10 @@
   }
 }
 
+.cp__right-sidebar-topbar {
+  background-color: #000000;
+  /*background-image: linear-gradient(147deg, #000000 0%, #2d3436 94%);*/
+}
 /* Increase the max allowable width of right sidebar*/
 .cp__right-sidebar.open {
   max-width: 90vw;
@@ -34,7 +38,7 @@
   margin-left: 0.05px !important; /* alternate value 4px */
 }
 
-.sidebar-item.content > div > div:first-of-type  {
+.sidebar-item.content > div > div:first-of-type {
   position: sticky !important;
   top: 0;
   padding: 0.5rem;
@@ -45,7 +49,7 @@
 
 /* First block after title */
 .sidebar-item.content > div > div:first-of-type + div {
-  margin-top: 0.5rem !important;  /* changed from 1.5rem */
+  margin-top: 0.5rem !important; /* changed from 1.5rem */
 }
 
 /*-----------------vertical style of sidebar------------------------*/
@@ -53,7 +57,7 @@
 .sidebar-item.content.color-level.px-4 {
   min-width: 33vw;
   overflow-y: scroll;
-  margin-top: -24px;  /* this value may depend on your current theme */
+  margin-top: -24px; /* this value may depend on your current theme */
 }
 
 .sidebar-item-list.flex-1.scrollbar-spacing {
@@ -70,30 +74,33 @@ div#right-sidebar,
   height: 100vh;
 }
 
-/*-------------------By Cannibalox------------------*/
+/*-------------------Masonry style by Cannibalox------------------*/
 
 :root {
-    --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
-    --masonry-minWidth: 60px;
-    --masonry-maxWidth: 600px;
-    --masonry-startHeight: 250; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
-    --masonry-minHeight: 56px;
+  --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
+  --masonry-minWidth: 60px;
+  --masonry-maxWidth: 600px;
+  --masonry-startHeight: 250; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
+  --masonry-minHeight: 56px;
 }
+
 .cp__right-sidebar .sidebar-item {
-    margin-right: 8px;
-    resize: both;
-    display: inline-block;
-    align-self: flex-start;
-    overflow-y: auto;
-    width: var(--masonry-startWidth);
-    min-width: var(--masonry-minWidth);
-    max-width: var(--masonry-maxWidth);
-    padding-bottom: 0 !important;
-    margin-bottom: 2px !important;
+  margin-right: 8px;
+  resize: both;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-y: auto;
+  width: var(--masonry-startWidth);
+  min-width: var(--masonry-minWidth);
+  max-width: var(--masonry-maxWidth);
+  padding-bottom: 0 !important;
+  margin-bottom: 2px !important;
 }
+
 .cp__right-sidebar-inner.flex.flex-col.h-full {
   background-color: #000;
 }
+
 .sidebar-item-list {
   background-color: #0d0d0d;
   height: 94vh !important;
@@ -102,12 +109,12 @@ div#right-sidebar,
   flex-wrap: wrap;
   align-content: flex-start;
   padding-bottom: 0;
-  }
+}
 
-/* ==== tables wrap === */
+/*------------------------- Tables Wrap ----------------------- */
 .table-auto {
-    table-layout: fixed;
-    width: 90%;
+  table-layout: fixed;
+  width: 90%;
 }
 
 .table-auto td.whitespace-nowrap {
