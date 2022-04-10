@@ -20,8 +20,7 @@
   order: 1;
 }
 
-
-/*---------------------Margins-----------------------*/
+/*------------------------------Margins------------------------------*/
 
 /* This reduces the margin space of the main content page */
 .cp__sidebar-main-content {
@@ -38,7 +37,7 @@
   --ls-main-content-max-width-wide: 99% !important;
 }
 
-/*-------------------- Topbar------------------- */
+/*---------------------------- Topbar------------------------------ */
 
 @supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
   .cp__header {
@@ -58,7 +57,7 @@
   }
 }
 
-/*--------------------------- Right side bar-----------------------*/
+/*--------------------------- Right sidebar--------------------------*/
 
 @supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
   .sidebar-item.content > div > div:first-of-type {
@@ -69,8 +68,8 @@
 }
 
 .cp__right-sidebar-topbar {
-   background-color: #000000; 
-   /*background-image: linear-gradient(147deg, #000000 0%, #2d3436 94%);*/
+  background-color: #000000;
+  /*background-image: linear-gradient(147deg, #000000 0%, #2d3436 94%);*/
 }
 /* Increase the max allowable width of right sidebar*/
 .cp__right-sidebar.open {
@@ -98,7 +97,7 @@
   margin-left: 0.05px !important; /* alternate value 4px */
 }
 
-.sidebar-item.content > div > div:first-of-type  {
+.sidebar-item.content > div > div:first-of-type {
   position: sticky !important;
   top: 0;
   padding: 0.5rem;
@@ -109,7 +108,7 @@
 
 /* First block after title */
 .sidebar-item.content > div > div:first-of-type + div {
-  margin-top: 0.5rem !important;  /* changed from 1.5rem */
+  margin-top: 0.5rem !important; /* changed from 1.5rem */
 }
 
 /*-----------------vertical style of sidebar------------------------*/
@@ -117,7 +116,7 @@
 .sidebar-item.content.color-level.px-4 {
   min-width: 33vw;
   overflow-y: scroll;
-  margin-top: -24px;  /* this value may depend on your current theme */
+  margin-top: -24px; /* this value may depend on your current theme */
 }
 
 .sidebar-item-list.flex-1.scrollbar-spacing {
@@ -134,26 +133,26 @@ div#right-sidebar,
   height: 100vh;
 }
 
-/*-------------------By Cannibalox------------------*/
+/*-------------------Masonry style by Cannibalox------------------*/
 
 :root {
-    --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
-    --masonry-minWidth: 60px;
-    --masonry-maxWidth: 600px;
-    --masonry-startHeight: 250; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
-    --masonry-minHeight: 56px;
+  --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
+  --masonry-minWidth: 60px;
+  --masonry-maxWidth: 600px;
+  --masonry-startHeight: 250; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
+  --masonry-minHeight: 56px;
 }
 .cp__right-sidebar .sidebar-item {
-    margin-right: 8px;
-    resize: both;
-    display: inline-block;
-    align-self: flex-start;
-    overflow-y: auto;
-    width: var(--masonry-startWidth);
-    min-width: var(--masonry-minWidth);
-    max-width: var(--masonry-maxWidth);
-    padding-bottom: 0 !important;
-    margin-bottom: 2px !important;
+  margin-right: 8px;
+  resize: both;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-y: auto;
+  width: var(--masonry-startWidth);
+  min-width: var(--masonry-minWidth);
+  max-width: var(--masonry-maxWidth);
+  padding-bottom: 0 !important;
+  margin-bottom: 2px !important;
 }
 .cp__right-sidebar-inner.flex.flex-col.h-full {
   background-color: #000;
@@ -166,12 +165,12 @@ div#right-sidebar,
   flex-wrap: wrap;
   align-content: flex-start;
   padding-bottom: 0;
-  }
+}
 
-/* ==== tables wrap === */
+/*------------------------- Tables Wrap ----------------------- */
 .table-auto {
-    table-layout: fixed;
-    width: 90%;
+  table-layout: fixed;
+  width: 90%;
 }
 
 .table-auto td.whitespace-nowrap {
@@ -180,7 +179,7 @@ div#right-sidebar,
   text-overflow: ellipsis;
 }
 
-/*---------------Fonts & Colors----------------------*/
+/*------------------------Fonts & Colors---------------------------*/
 :root {
   --ct-background: var(--ls-primary-background-color);
   --ct-page-font-color: var(--ls-primary-text-color);
@@ -199,7 +198,7 @@ div#right-sidebar,
   --ct-query-header-background: var(--ct-primary-color);
 }
 
-/*-------------- Heading & Page title---------------- */
+/*--------------------- Heading & Page title----------------------- */
 h1.title {
   margin-top: 8px;
   font-family: var(--ct-page-title-font-family);
@@ -287,7 +286,7 @@ a.title h1.title {
   content: "";
 }
 
-/* --------------Hide unused navigation items-------------- */
+/* -------------------Hide unused navigation items----------------- */
 
 .cp__right-sidebar-settings .ml-4.text-sm:last-child {
   display: none;
@@ -309,7 +308,7 @@ a.title h1.title {
   display: none;
 }
 
-/*------------------Move toolbar icons-------------------*/
+/*------------------------Move toolbar icons-------------------------*/
 
 /* shrink left toolbar */
 /* note that underscore after cp should be typed twice __ and not just _ */
@@ -338,7 +337,7 @@ body:not([data-page="home"]) .r > div:nth-child(2) {
   order: 4;
 }
 
-/*----------------- vismode icon component by cannibalox ------------------*/
+/*----------------- Vismode icon component by cannibalox ------------------*/
 /* hide tags with .v-       */
 a.tag[data-ref*=".v-"]:before {
   content: "👁";
@@ -387,7 +386,6 @@ a.tag[data-ref*=".v-"] {
   a.tag {
   display: none;
 }
-/*-----------end of vismode icon component-------------------*/
 
 /* ----------------Kanban columns view by cannibalox------------- */
 
@@ -417,6 +415,7 @@ div[data-refs-self*="kanban"]
   min-width: 200px;
   margin-right: 10px;
 }
+
 /* wide */
 div[data-refs-self*="kanban-small"]
   > .block-children-container.flex
@@ -515,7 +514,7 @@ div[data-refs-self*="kanban-fit"]
   width: max-content;
 }
 
-/* ----------- Custom Margins for kanban tables------------ */
+/* --------------- Custom Margins for kanban tables-------------- */
 
 [data-refs-self*="kanban"]
   > .block-children-container.flex
@@ -537,7 +536,7 @@ div[data-refs-self*="kanban"] .initial > div > .flex {
   display: none;
 }
 
-/*------------------------Tags----------------------------*/
+/*----------------------------Tags---------------------------------*/
 
 /* Changes to appearance of tags */
 a.tag {
@@ -568,7 +567,7 @@ a.tag[data-ref*="p_"] {
   white-space: nowrap;
 }
 
-/*-------------------Miscellaneous----------------------*/
+/*------------------------Miscellaneous-----------------------------*/
 
 /* Block with-bg-color */
 .with-bg-color {
@@ -635,7 +634,7 @@ iframe[id^="youtube-player"] {
   width: var(--ls-main-content-max-width-wide) !important;
 }
 
-/*----------------------Priorities------------------------*/
+/*--------------------------Priorities------------------------------*/
 
 /* Remove the display of A, B, C priorities */
 a[priority="A"]::before,
@@ -653,7 +652,7 @@ a.priority[href="#/page/C" i]:before {
   display: none;
 }
 
-/*----------------------Queries---------------------------*/
+/*---------------------------Queries--------------------------------*/
 
 /* Reduce query padding*/
 .custom-query > div:first-child {
@@ -714,7 +713,7 @@ div.dsl-query > div.custom-query > div.flex > div.content {
   color: var(--ct-query-header-color);
 }
 
-/*------------------------TODOs------------------------*/
+/*----------------------------TODOs--------------------------------*/
 
 :root {
   --ct-marker-border-radius: 4px;
@@ -782,7 +781,7 @@ div.dsl-query > div.custom-query > div.flex > div.content {
   font-size: 0.75rem;
 }
 
-/*------Adding more highlight and font colors---------*/
+/*-------------Adding more highlight and font colors-----------------*/
 
 /* highlight */
 mark {
@@ -805,7 +804,7 @@ span[data-ref="$blue"] + mark {
   color: #3da5ff !important;
 }
 
-/*-----------------------------------------------------*/
+/*---------------------Page/Block Embed---------------------------*/
 
 /* Change the look of embeds*/
 .embed,
@@ -826,9 +825,10 @@ span[data-ref="$blue"] + mark {
   transform: translate(-7px, -6px);
 }
 
-/*-------------------------------------------------------*/
+/*---------------------Pinned Notes---------------------------------*/
 
-/* Formatting to make cool pinned notes */
+/* Formatting to make cool pinned notes 
+   Works well on Linux, but not on Windows */
 
 .pinned {
   margin-top: 10px;
@@ -897,7 +897,8 @@ span[data-ref="$blue"] + mark {
   transform-origin: 50% 100%;
 }
 
-/* -----------------query table resizer by cannibalox [v20220314b] ----------------- */
+/* -------------------Query table resizer ------------------------- */
+/*by cannibalox [v20220314b]*/
 
 .table th {
   position: relative;
@@ -942,7 +943,8 @@ span[data-ref="$blue"] + mark {
   max-height: 120px;
   margin: 0;
 }
-/* -----------------------end of table resizer----------------------------- */
+
+/* -----------------------Block Borders----------------------------- */
 
 /* ----------------------------------------------------------------
    *  ls-border v0.2 20220307 by cannibalox
@@ -975,7 +977,7 @@ span[data-ref="$blue"] + mark {
   padding: 0.15em 0em !important;
 }
 
-/*------------------------End of Borders---------------------------*/
+/*---------------------Dark Theme Colors--------------------------*/
 
 .dark-theme,
 html[data-theme="dark"] {
@@ -1026,7 +1028,8 @@ html[data-theme="dark"] {
   filter: brightness(0.8) saturate(85%);
 }
 
-/* -----------------Adjustments for Mobile------------------*/
+/* --------------------Adjustments for Mobile----------------------*/
+
 @media (max-width: 640px) {
   html {
     font-size: 15px;
