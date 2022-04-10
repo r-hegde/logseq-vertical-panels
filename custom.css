@@ -20,6 +20,7 @@
   order: 1;
 }
 
+
 /*---------------------Margins-----------------------*/
 
 /* This reduces the margin space of the main content page */
@@ -40,8 +41,7 @@
 /*-------------------- Topbar------------------- */
 
 @supports (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px)) {
-  .cp__header,
-  .cp__right-sidebar-topbar {
+  .cp__header {
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     background-color: transparent;
@@ -68,13 +68,17 @@
   }
 }
 
+.cp__right-sidebar-topbar {
+   background-color: #000000; 
+   /*background-image: linear-gradient(147deg, #000000 0%, #2d3436 94%);*/
+}
 /* Increase the max allowable width of right sidebar*/
 .cp__right-sidebar.open {
   max-width: 90vw;
 }
 
 .cp__right-sidebar-inner {
-  --ct-sidebar-padding: 0.05rem !important; /* alternate value 0.5rem */
+  --ct-sidebar-padding: 0.05px !important; /* alternate value 0.5rem */
 }
 
 .cp__right-sidebar-inner .resizer {
@@ -85,24 +89,27 @@
 .sidebar-item-list {
   padding-left: 0.5rem !important; /* alternate value 1rem */
   padding-right: 0.05rem !important; /* alternate value 1rem */
+  padding-bottom: 0;
 }
 
 /* Right sidebar title */
 .sidebar-item .ml-1:not(.text-sm) {
   font-size: 0.9em !important; /* alternate value 1.2rem */
-  margin-left: 0.25px !important; /* alternate value 4px */
+  margin-left: 0.05px !important; /* alternate value 4px */
 }
 
-.sidebar-item.content > div > div:first-of-type {
-  position: sticky;
+.sidebar-item.content > div > div:first-of-type  {
+  position: sticky !important;
   top: 0;
   padding: 0.5rem;
   z-index: 10;
-  margin: -1rem;
+  margin-right: -0.75rem;
+  margin-left: -1rem;
 }
 
+/* First block after title */
 .sidebar-item.content > div > div:first-of-type + div {
-  margin-top: 2rem !important; /* changed from 1.5rem */
+  margin-top: 0.5rem !important;  /* changed from 1.5rem */
 }
 
 /*-----------------vertical style of sidebar------------------------*/
@@ -110,7 +117,7 @@
 .sidebar-item.content.color-level.px-4 {
   min-width: 33vw;
   overflow-y: scroll;
-  margin-top: -24px; /* this value may depend on your current theme*/
+  margin-top: -24px;  /* this value may depend on your current theme */
 }
 
 .sidebar-item-list.flex-1.scrollbar-spacing {
@@ -124,40 +131,53 @@ div#right-sidebar {
 
 div#right-sidebar,
 .cp__right-sidebar-scrollable {
-  height: calc(100vh - 8px);
+  height: 100vh;
 }
 
-/*----------- Trying  Andy mode (needs fixing) -----------------
-.sidebar-item.content {
-  overflow-x:scroll; 
-  --header-width: 24px;
+/*-------------------By Cannibalox------------------*/
+
+:root {
+    --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
+    --masonry-minWidth: 60px;
+    --masonry-maxWidth: 600px;
+    --masonry-startHeight: 250; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
+    --masonry-minHeight: 56px;
 }
-.sidebar-item.content > div {
-  position: sticky;
-  left:0;
+.cp__right-sidebar .sidebar-item {
+    margin-right: 8px;
+    resize: both;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-y: auto;
+    width: var(--masonry-startWidth);
+    min-width: var(--masonry-minWidth);
+    max-width: var(--masonry-maxWidth);
+    padding-bottom: 0 !important;
+    margin-bottom: 2px !important;
+}
+.cp__right-sidebar-inner.flex.flex-col.h-full {
+  background-color: #000;
+}
+.sidebar-item-list {
+  background-color: #0d0d0d;
+  height: 94vh !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-bottom: 0;
+  }
+
+/* ==== tables wrap === */
+.table-auto {
+    table-layout: fixed;
+    width: 90%;
 }
 
-.sidebar-item.content > div > div:first-of-type  {
-  writing-mode: vertical-lr;            
-  text-orientation: sideways;
-  border-top: none;  
-  border-bottom: none;  
-  height: auto;  
-  position: absolute;
-  left:-10px;  
-  top:0;  
-  bottom:0;
-}
-
-/*--------------Trial-2----------------
-
-.sidebar-item.content {
-    overflow: unset;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    align-content: flex-start;
+.table-auto td.whitespace-nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /*---------------Fonts & Colors----------------------*/
@@ -367,7 +387,7 @@ a.tag[data-ref*=".v-"] {
   a.tag {
   display: none;
 }
-/*---------------end of vismode icon component-------------------*/
+/*-----------end of vismode icon component-------------------*/
 
 /* ----------------Kanban columns view by cannibalox------------- */
 
@@ -877,21 +897,20 @@ span[data-ref="$blue"] + mark {
   transform-origin: 50% 100%;
 }
 
-/* -----------------query table resizer by cannibalox [v20220331] ----------------- */
+/* -----------------query table resizer by cannibalox [v20220314b] ----------------- */
 
 .table th {
   position: relative;
 }
 .query-table-resizer {
+  /* Displayed at the right side of column */
   position: relative;
   top: -20px;
-  float: right;
+  right: 0;
   margin-bottom: -18px;
   cursor: col-resize;
   user-select: none;
   border-right: 1px solid var(--ls-border-color);
-  width: 10px; /* hitbox width */
-  height: 20px;
 }
 
 .query-table-resizer:active,
@@ -899,29 +918,30 @@ span[data-ref="$blue"] + mark {
   border-right: 2px solid rgb(255, 0, 0);
 }
 
-.custom-query table.table-auto {
+.dsl-query table.table-auto {
   width: -webkit-fill-available;
   table-layout: fixed;
 }
-.custom-query .table-auto > thead > tr > th {
+
+.dsl-query .table-auto > thead > tr > th {
   border-bottom: 1px solid var(--ls-border-color);
 }
-.custom-query .table-auto > thead > tr > th {
+
+.dsl-query .table-auto > thead > tr > th {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 3px 6px;
 }
-.custom-query .table-auto > tbody > tr > td.whitespace-nowrap {
+
+.dsl-query .table-auto > tbody > tr > td.whitespace-nowrap {
   overflow-wrap: break-word;
   min-width: 20px;
   white-space: normal;
-  font-weight: 300;
-  font-size: 13px;
 }
-.custom-query .table-auto > tbody > tr > .whitespace-nowrap img {
+
+.dsl-query .table-auto > tbody > tr > .whitespace-nowrap img {
   max-height: 120px;
   margin: 0;
 }
-
 /* -----------------------end of table resizer----------------------------- */
 
 /* ----------------------------------------------------------------
