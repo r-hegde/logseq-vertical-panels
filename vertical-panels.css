@@ -14,7 +14,7 @@
 }
 
 .cp__right-sidebar-inner {
-  --ct-sidebar-padding: 0.05rem !important; /* alternate value 0.5rem */
+  --ct-sidebar-padding: 0.05px !important; /* alternate value 0.5rem */
 }
 
 .cp__right-sidebar-inner .resizer {
@@ -25,24 +25,27 @@
 .sidebar-item-list {
   padding-left: 0.5rem !important; /* alternate value 1rem */
   padding-right: 0.05rem !important; /* alternate value 1rem */
+  padding-bottom: 0;
 }
 
 /* Right sidebar title */
 .sidebar-item .ml-1:not(.text-sm) {
   font-size: 0.9em !important; /* alternate value 1.2rem */
-  margin-left: 0.25px !important; /* alternate value 4px */
+  margin-left: 0.05px !important; /* alternate value 4px */
 }
 
-.sidebar-item.content > div > div:first-of-type {
-  position: sticky;
+.sidebar-item.content > div > div:first-of-type  {
+  position: sticky !important;
   top: 0;
   padding: 0.5rem;
   z-index: 10;
-  margin: -1rem;
+  margin-right: -0.75rem;
+  margin-left: -1rem;
 }
 
+/* First block after title */
 .sidebar-item.content > div > div:first-of-type + div {
-  margin-top: 2rem !important; /* changed from 1.5rem */
+  margin-top: 0.5rem !important;  /* changed from 1.5rem */
 }
 
 /*-----------------vertical style of sidebar------------------------*/
@@ -50,7 +53,7 @@
 .sidebar-item.content.color-level.px-4 {
   min-width: 33vw;
   overflow-y: scroll;
-  margin-top: -24px; /* this value may depend on your current theme*/
+  margin-top: -24px;  /* this value may depend on your current theme */
 }
 
 .sidebar-item-list.flex-1.scrollbar-spacing {
@@ -64,5 +67,51 @@ div#right-sidebar {
 
 div#right-sidebar,
 .cp__right-sidebar-scrollable {
-  height: calc(100vh - 8px);
+  height: 100vh;
+}
+
+/*-------------------By Cannibalox------------------*/
+
+:root {
+    --masonry-startWidth: 450px; /* DEFAULT: 550px; Use "unset" to prevent loading in grid like format */
+    --masonry-minWidth: 60px;
+    --masonry-maxWidth: 600px;
+    --masonry-startHeight: 250; /* DEFAULT: 243px; Use "unset" to prevent loading in grid like format */
+    --masonry-minHeight: 56px;
+}
+.cp__right-sidebar .sidebar-item {
+    margin-right: 8px;
+    resize: both;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-y: auto;
+    width: var(--masonry-startWidth);
+    min-width: var(--masonry-minWidth);
+    max-width: var(--masonry-maxWidth);
+    padding-bottom: 0 !important;
+    margin-bottom: 2px !important;
+}
+.cp__right-sidebar-inner.flex.flex-col.h-full {
+  background-color: #000;
+}
+.sidebar-item-list {
+  background-color: #0d0d0d;
+  height: 94vh !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-bottom: 0;
+  }
+
+/* ==== tables wrap === */
+.table-auto {
+    table-layout: fixed;
+    width: 90%;
+}
+
+.table-auto td.whitespace-nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
