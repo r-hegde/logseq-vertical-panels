@@ -1,0 +1,32 @@
+/* -----------------------Block Borders----------------------------- */
+
+/* ----------------------------------------------------------------
+   *  ls-border v0.2 20220307 by cannibalox
+   *  create borders around blocks (framed boxes)
+   *  usage:   
+   *  - tag a block with #.v-self-border to create a box around
+   *    the current block
+   *  - tag a block with #.v-border-children to create boxes
+   *    around the children blocks of the current block
+   *  - or combine both with #.v-self-border-children
+--------------------------------------------------------------------*/
+
+[data-refs-self*="self-border"] {
+  box-shadow: 2px 2px 3px #0000003b;
+  border: 1px solid var(--ls-border-color);
+  border-radius: var(--ls-border-radius-medium);
+  background-color: var(--ls-primary-background-color);
+  margin: 0em 0.5em 0.2em 1em !important;
+  padding: 0.5em 1em 0.5em 0em !important;
+}
+[data-refs-self*="border-child"]
+  > .block-children-container.flex
+  > .block-children
+  > .ls-block {
+  box-shadow: 2px 2px 3px #0000003b;
+  border: 1px solid var(--ls-border-color);
+  border-radius: var(--ls-border-radius-low);
+  background-color: var(--ls-tertiary-background-color);
+  margin: 0.5em 1em 0.5em 0em !important;
+  padding: 0.15em 0em !important;
+}
