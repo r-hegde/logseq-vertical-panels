@@ -1106,6 +1106,151 @@ html[data-theme="dark"] .caution svg {
   filter: none;
 }
 
+/*------------------------------Tippy from Craft theme---------------------------------------*/
+
+.tippy-popper[x-placement^="bottom"] [x-arrow] {
+  border-right: transparent;
+  border-bottom: transparent;
+  border-left: transparent;
+}
+.dark-theme .tippy-popper[x-placement^="bottom"] [x-arrow],
+html[data-theme="dark"] .tippy-popper[x-placement^="bottom"] [x-arrow] {
+  border-right: transparent;
+  border-bottom: transparent;
+  border-left: transparent;
+}
+
+.tippy-popper[x-placement^="left"] [x-arrow] {
+  border-top: transparent;
+  border-bottom: transparent;
+  border-left: transparent;
+}
+.dark-theme .tippy-popper[x-placement^="left"] [x-arrow],
+html[data-theme="dark"] .tippy-popper[x-placement^="left"] [x-arrow] {
+  border-top: transparent;
+  border-bottom: transparent;
+  border-left: transparent;
+}
+
+.tippy-popper[x-placement^="right"] [x-arrow] {
+  border-top: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+}
+.dark-theme .tippy-popper[x-placement^="right"] [x-arrow],
+html[data-theme="dark"] .tippy-popper[x-placement^="right"] [x-arrow] {
+  border-top: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+}
+
+.tippy-popper[x-placement^="top"] [x-arrow] {
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+}
+.dark-theme .tippy-popper[x-placement^="top"] [x-arrow],
+html[data-theme="dark"] .tippy-popper[x-placement^="top"] [x-arrow] {
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+}
+
+.tippy-tooltip {
+  background-color: var(--cl-white);
+  border-top: 1px solid var(--cl-platinum);
+  border-right: 1px solid var(--cl-platinum);
+  border-bottom: 1px solid var(--cl-platinum);
+  border-left: 1px solid var(--cl-platinum);
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dark-theme .tippy-tooltip,
+html[data-theme="dark"] .tippy-tooltip {
+  background-color: var(--cl-fadedblack);
+  border-top: 1px solid var(--cl-mineshaft);
+  border-right: 1px solid var(--cl-mineshaft);
+  border-bottom: 1px solid var(--cl-mineshaft);
+  border-left: 1px solid var(--cl-mineshaft);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .tippy-tooltip h2,
+html[data-theme="dark"] .tippy-tooltip h2 {
+  border-bottom: transparent;
+  color: var(--cl-wildsand);
+}
+
+.tippy-wrapper::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+.dark-theme .tippy-wrapper::-webkit-scrollbar-track,
+html[data-theme="dark"] .tippy-wrapper::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+.tippy-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--cl-concord);
+  border-radius: 5px;
+}
+.dark-theme .tippy-wrapper::-webkit-scrollbar-thumb,
+html[data-theme="dark"] .tippy-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--cl-silverchalice);
+}
+
+.tippy-wrapper {
+  background-color: var(--cl-white);
+  border-radius: 5px;
+  color: var(--cl-black) !important;
+  font-weight: normal !important;
+}
+.dark-theme .tippy-wrapper,
+html[data-theme="dark"] .tippy-wrapper {
+  background-color: var(--cl-fadedblack);
+  color: var(--cl-wildsand) !important;
+}
+
+.dark-theme,
+html[data-theme="dark"] {
+  --cl-columbia: #91def9;
+  --cl-spirodisco: #2ec8ff;
+  --cl-pumice: #c7c7c7;
+  --cl-silverchalice: #a9abae;
+  --cl-stack: #8b8b8b;
+  --cl-shadylady: #9d9d9d;
+  --cl-monsoon: #787878;
+  --cl-brightgray: #595959;
+  --cl-thunder: #4c4c4c;
+  --cl-charcoal: #3f3f3f;
+  --cl-mineshaft: #323232;
+  --cl-codgray: #2f2f2f;
+  --cl-bunker: #2c2c2c;
+  --cl-bokara: #292929;
+  --cl-fadedblack: #222222;
+  --cl-darkjungle: #1e1e1e;
+  --cl-codblack: #0a0a0a;
+  --cl-oxford: #253239;
+  --cl-cinder: #242a2d;
+  --cl-jellybean: #4b7c8f;
+  --cl-smaltblue: #5a808e;
+  --cl-chambray: #455d70;
+  --cl-matisse: #3e6188;
+  --cl-navyblue: #0052d1;
+  --cl-wildsand: #f4f4f4;
+  --cl-gray: #808080;
+  --cl-racinggreen: #20322e;
+  --cl-aztec: #293236;
+  --cl-blumine: #326277;
+  --cl-lemonginger: #917c26;
+  --cl-hawkes: #cfeaff;
+}
+
 /* -------------------Query table resizer ------------------------- */
 /*by cannibalox [v20220314b]*/
 
