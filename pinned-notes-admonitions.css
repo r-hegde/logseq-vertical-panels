@@ -1,0 +1,280 @@
+/*---------------------Pinned Notes---------------------------------*/
+
+/* Formatting to make cool pinned notes 
+   Works well on Linux, but not on Windows */
+
+.pinned {
+  margin-top: 10px;
+  position: relative;
+}
+
+.pinned svg {
+  display: none;
+}
+
+.pinned {
+  margin-top: 10px;
+  position: relative;
+}
+.pinned > :last-child {
+  color: #333;
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0 12px 10px -7px rgb(0 0 0 / 20%);
+  background: #89f2fa;
+  transform: rotate(2deg);
+}
+.pinned > :first-child {
+  background-color: #aaa;
+  display: block;
+  height: 32px;
+  width: 2px;
+  position: absolute;
+  left: 50%;
+  top: -16px;
+  z-index: 1;
+  padding: 0;
+}
+.pinned > :first-child:after {
+  background-color: #a31;
+  background-image: radial-gradient(
+    25% 25%,
+    circle,
+    hsla(0, 0%, 100%, 0.3),
+    hsla(0, 0%, 0%, 0.3)
+  );
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.1),
+    inset 3px 3px 3px hsla(0, 0%, 100%, 0.2),
+    inset -3px -3px 3px hsla(0, 0%, 0%, 0.2),
+    23px 20px 3px hsla(0, 0%, 0%, 0.15);
+  content: "";
+  height: 12px;
+  left: -5px;
+  position: absolute;
+  top: -10px;
+  width: 12px;
+}
+.pinned > :first-child:before {
+  background-color: hsla(0, 0%, 0%, 0.1);
+  box-shadow: 0 0 0.25em hsla(0, 0%, 0%, 0.1);
+  content: "";
+  height: 24px;
+  width: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(57.5deg);
+  transform-origin: 50% 100%;
+}
+
+/* ----------------Admonition & Blockquote by BlueTeaFrog----------------- */
+:root {
+  --bq: 168, 69%;
+  --important: 338, 80%;
+  --verse: 185, 100%;
+  --warn: 46, 74%;
+  --caution: 376, 100%;
+  --tip: 209, 87%;
+  --note: 210, 9%;
+  --example: 215, 34%;
+
+  --bq-dark: 160, 33%; /* 38% */
+  --important-dark: 350, 39%; /* 22%; */
+  --verse-dark: 191, 38%; /* 36% */
+  --warn-dark: 37, 32%; /* 39% */
+  --caution-dark: 16, 34%; /* 31% */
+  --tip-dark: 212, 34%; /* 38% */
+  --note-dark: 217, 20%; /* 31% */
+  --example-dark: 215, 34%;
+}
+
+.verse,
+blockquote,
+pre.pre-wrap-white-space {
+  border: 1px solid var(--transparent);
+  border-radius: var(--radius-md);
+  padding: 2em 2em;
+  margin: 1em 0;
+}
+
+.admonitionblock .is-paragraph {
+  font-size: 0.9em;
+}
+
+html[data-theme="light"] blockquote {
+  background-color: hsl(var(--bq), 74%, 0.2);
+  border-color: hsl(var(--bq), 74%, 0.1);
+}
+
+html[data-theme="dark"] blockquote {
+  background-color: hsl(var(--bq-dark), 38%, 0.8);
+  border-color: hsl(var(--bq-dark), 38%, 1);
+}
+
+html[data-theme="dark"] blockquote::before {
+  color: hsl(var(--bq), 74%, 0.5);
+}
+html[data-theme="light"] blockquote::before {
+  color: hsl(var(--bq), 74%, 0.5);
+}
+
+html[data-theme="dark"] .important,
+html[data-theme="dark"] .admonitionblock.important {
+  background-color: hsl(var(--important-dark), 22%, 0.8);
+  border-color: hsl(var(--important-dark), 22%, 1);
+}
+
+html[data-theme="light"] .important,
+html[data-theme="light"] .admonitionblock.important {
+  background-color: hsl(var(--important), 80%, 0.1);
+  border-color: hsl(var(--important), 80%, 0.1);
+}
+html[data-theme="dark"] .verse {
+  background-color: hsl(var(--verse-dark), 36%, 0.8);
+  border-color: hsl(var(--verse-dark), 36%, 1);
+  font-style: italic;
+}
+
+html[data-theme="light"] .verse {
+  background-color: hsl(var(--verse), 60%, 0.1);
+  border-color: hsl(var(--verse), 60%, 0.1);
+  font-style: italic;
+}
+
+html[data-theme="dark"] .warning,
+html[data-theme="dark"] .admonitionblock.warning {
+  background-color: hsl(var(--warn-dark), 39%, 1);
+  border-color: hsl(var(--warn-dark), 39%, 1);
+}
+html[data-theme="light"] .warning,
+html[data-theme="light"] .admonitionblock.warning {
+  background-color: hsl(var(--warn), 82%, 0.15);
+  border-color: hsl(var(--warn), 82%, 0.2);
+}
+
+html[data-theme="dark"] .cp__plugins-page > .admonitionblock.warning,
+html[data-theme="dark"]
+  #settings
+  > div
+  > article
+  > div
+  > div.flex.flex-row.admonitionblock.align-items.warning {
+  background-color: hsl(var(--warn), 82%, 0.02);
+}
+
+html[data-theme="light"] .cp__plugins-page > .admonitionblock.warning,
+html[data-theme="light"]
+  #settings
+  > div
+  > article
+  > div
+  > div.flex.flex-row.admonitionblock.align-items.warning {
+  background-color: hsl(var(--warn), 82%, 0.1);
+}
+
+html[data-theme="dark"] .caution,
+html[data-theme="dark"] .admonitionblock.caution {
+  background-color: hsl(var(--caution-dark), 31%, 1);
+  border-color: hsl(var(--caution-dark), 31%, 1);
+}
+
+html[data-theme="light"] .caution,
+html[data-theme="light"] .admonitionblock.caution {
+  background-color: hsl(var(--caution), 84%, 0.1);
+  border-color: hsl(var(--caution), 84%, 0.1);
+}
+
+html[data-theme="dark"] .tip,
+html[data-theme="dark"] .admonitionblock.tip {
+  background-color: hsl(var(--tip-dark), 38%, 1);
+  border-color: hsl(var(--tip-dark), 38%, 1);
+}
+
+html[data-theme="light"] .tip,
+html[data-theme="light"] .admonitionblock.tip {
+  background-color: hsl(var(--tip), 73%, 0.1);
+  border-color: hsl(var(--tip), 73%, 0.1);
+}
+
+html[data-theme="dark"] .note,
+html[data-theme="dark"] .admonitionblock.note {
+  background-color: hsl(var(--note-dark), 31%, 1);
+  border-color: hsl(var(--note-dark), 31%, 1);
+}
+
+html[data-theme="light"] .note,
+html[data-theme="light"] .admonitionblock.note {
+  background-color: hsl(var(--note), 86%, 0.2);
+  border-color: hsl(var(--note), 86%, 0.3);
+}
+
+html[data-theme="dark"] pre.pre-wrap-white-space {
+  background-color: hsl(var(--example-dark), 12%, 1);
+  border-color: hsl(var(--example-dark), 12%, 1);
+}
+
+html[data-theme="light"] pre.pre-wrap-white-space {
+  background-color: hsl(var(--example), 10%, 0.06);
+  border-color: hsl(var(--example), 10%, 0.05);
+}
+
+html[data-theme="light"] .warning svg {
+  color: hsl(var(--warn), 82%);
+}
+
+html[data-theme="light"] .important svg {
+  color: hsl(var(--important), 80%);
+}
+
+html[data-theme="light"] .tip svg {
+  color: hsl(var(--tip), 73%);
+}
+
+html[data-theme="light"] .note svg {
+  color: hsl(var(--note), 86%);
+}
+
+html[data-theme="light"] .caution svg {
+  color: hsl(var(--caution), 84%);
+}
+
+html[data-theme="dark"] .warning svg {
+  color: hsl(var(--warn), 82%, 0.6);
+}
+
+html[data-theme="dark"] .important svg {
+  color: hsl(var(--important), 80%, 0.6);
+}
+
+html[data-theme="dark"] .tip svg {
+  color: hsl(var(--tip), 73%, 0.6);
+}
+
+html[data-theme="dark"] .note svg {
+  color: hsl(var(--note), 86%, 0.8);
+}
+
+html[data-theme="dark"] .caution svg {
+  color: hsl(var(--caution), 84%, 0.6);
+}
+
+.admonition-icon {
+  border-color: var(--transparent);
+}
+
+.admonition-icon > svg {
+  background-color: var(--transparent) !important;
+}
+
+.admonitionblock > .admonition-icon > .svg-shadow {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.tip-shadow {
+  -webkit-filter: none;
+  filter: none;
+}
