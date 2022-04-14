@@ -648,8 +648,13 @@ iframe[id^="youtube-player"] {
 }
 
 /*----------------------Priorities------------------------*/
+a[priority],
+a.priority {
+  font-size: 0px;
+  /* Hide text */
+}
 
-/* Remove the display of A, B, C priorities */
+/* Change the display of A, B, C priorities */
 a[priority=A]::before,
 a.priority[href="#/page/A" i]:before {
   content: " 🔺ASAP " !important;
@@ -712,16 +717,32 @@ div.custom-query {
   background: var(--ls-tertiary-background-color);
 }
 
-/* Hide "table view" from queries 
-div.custom-query div.align-items,
-div.custom-query div.my-2 {
+/*Hide "Set properties"*/
+.text-sm.mr-1 {
+    display: none;
+}
+
+/* Hide "table view" from queries */
+div.mx-2 {
   display: none;
-}*/
+}
+
+/*Hide the table-view selector*/
+span.wrapper.transition-colors.ease-in-out {
+  display: none;
+}
 
 /* Remove the actual query displayed in simple query tables */
 div.dsl-query > div.custom-query > div.flex > div.content {
   display: none;
 }
+
+/*Formatting results count*/
+span.opacity-60.text-sm.ml-2.results-count {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
 
 .dsl-query .custom-query-title > .font-medium,
 :not(.dsl-query) > .custom-query .custom-query-title {
